@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import * as contentful from 'contentful'
 import Blog from "../components/Blog.js"
 import Global from '../components/Global.js'

@@ -23,13 +23,7 @@ class PostPage extends React.Component
     <div>
       <Global/>
       <div className="hc" style={{width:"100%"}}>
-      {this.state.posts.map(post =>
-      <Preview data={post}/>
-      /*
-        <div style={{display:"table",clear:"both",whiteSpace: "nowrap",border:".3vmin solid black",borderRadius:"1vmin",margin:"1vmin"}}>
-        <a style={{display:"table-cell",position:"relative",color:"black",textDecoration:"none",margin:"10%",fontSize:"3vmin"}}href={"/post?id="+post.sys.id}>{post.fields.title}</a>
-        </div>*/
-        )}
+        {this.state.posts.map(post =><Preview data={post}/>)}
       </div>
     </div>);
   }
