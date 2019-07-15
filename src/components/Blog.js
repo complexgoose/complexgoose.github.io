@@ -1,7 +1,7 @@
 import React from "react";
 import * as contentful from 'contentful'
 import ReactMarkdown from 'react-markdown'
-
+import Image from 'react-bootstrap/Image'
 class Blog extends React.Component
 {
     state={data:{}}
@@ -24,12 +24,14 @@ class Blog extends React.Component
         return(
             
         <div className="hc" style={{width:"100%",marginTop:"3%",flexWrap:"wrap"}}>
-            <div style={{maxWidth:"50vmax"}}>
-            <h1 style={{fontSize:"5vh",fontWeight:"bold"}}>{this.state.data.fields.title}</h1>
-            <div style={{flexBasis:"100%"}}/>
-            <div style={{fontSize:"3vh",lineHeight:"5vh"}}> 
-            <ReactMarkdown source={this.state.data.fields.content}/>
-            </div>
+            <div style={{maxWidth:"40vmax"}}>
+                    <h1 style={{fontWeight:"bold"}}>{this.state.data.fields.title}</h1>
+                    <p style={{paddingBottom:"30"}}>{this.state.data.fields.tagline}</p>
+                    <Image fluid src={this.state.data.fields.image.fields.file.url}/>
+                    <div style={{flexBasis:"100%",height:"2%"}}/>
+                <div style={{fontSize:"21px",lineHeight:"1.2em",fontFamily: "'DM Serif Text', serif"}}> 
+                    <ReactMarkdown source={this.state.data.fields.content}/>
+                </div>
             </div>
         </div>);
     }
