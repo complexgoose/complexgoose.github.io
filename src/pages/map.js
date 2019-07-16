@@ -6,9 +6,9 @@ class MapPage extends React.Component
     render()
     {
         return(
-            <div>
+            <div style={{height:"100vh"}}>
                 <Global/>
-                <iframe style ={{width:"100%",height:"93vh"}}src="https://go.strosahl.org/map"/>
+                <iframe style ={{height:"93vh",width:"100%"}}src="https://go.jack.vg/map"/>
             </div>
         );
     }

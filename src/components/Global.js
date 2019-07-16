@@ -38,7 +38,7 @@ class Global extends React.Component
                 <Head/>
                 
                 <Navbar sticky="top" bg="dark" variant="dark" style={{height:"7vh",fontSize:"2vmin"}}>
-                    <Navbar.Brand as={Link} style={{marginLeft:"20%"}} to="">{"{js}"}</Navbar.Brand>
+                    <Navbar.Brand as={Link} style={{fontSize:"4vmin",marginLeft:"10%",marginRight:"5%"}} to="">{"{js}"}</Navbar.Brand>
                     <Nav variant="pills" activeKey={this.getActiveKey()}>
                         <HeaderLink to="posts" name="Posts"/>
                         <HeaderLink to="map" name="Map"/>
