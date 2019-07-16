@@ -41,6 +41,7 @@ class Global extends React.Component
                     <Navbar.Brand as={Link} style={{marginLeft:"20%"}} to="">{"{js}"}</Navbar.Brand>
                     <Nav variant="pills" activeKey={this.getActiveKey()}>
                         <HeaderLink to="posts" name="Posts"/>
+                        <HeaderLink to="map" name="Map"/>
                     </Nav>
                 </Navbar>
             </div>
