@@ -1,9 +1,9 @@
 import React from "react"
 import * as contentful from 'contentful'
-import '../styles/index.css'
 import Preview from '../components/Preview.js'
 import Global from '../components/Global'
-
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 class PostPage extends React.Component
 {
   client = contentful.createClient({
@@ -14,7 +14,7 @@ class PostPage extends React.Component
   componentDidMount()
   {
     this.client.getEntries()
-    .then((response) => this.setState({posts:response.items}))
+    .then((response) => this.setState({posts:response.items.reverse()}))
     .catch();
   }
   render()
@@ -22,9 +22,11 @@ class PostPage extends React.Component
     return(
     <div>
       <Global/>
-      <div className="hc" style={{width:"100%"}}>
+      <Container style={{width:"100%",marginBottom:"2%"}}>
+        <Row>
         {this.state.posts.map(post =><Preview data={post}/>)}
-      </div>
+        </Row>
+      </Container>
     </div>);
   }
 }
