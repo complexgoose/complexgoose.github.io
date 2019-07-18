@@ -8,3 +8,5 @@
 
 import "./src/styles/global.css"
 import "bootstrap/dist/css/bootstrap.min.css"
+import "typeface-encode-sans-condensed"
+import "typeface-merriweather"
