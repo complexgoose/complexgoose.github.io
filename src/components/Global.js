@@ -27,7 +27,6 @@ class Global extends React.Component
     {
         if(!this.mounted) return "";
         let path = window.location.pathname.slice(1).replace("/","");
-        console.log(path);
         if(path.startsWith("post")) return "posts";
         return path;
     }
@@ -36,16 +35,17 @@ class Global extends React.Component
         return(
             <div style={{width:"100%"}}>
                 <Head/>
-                <Navbar bg="dark" variant="dark" style={{height:"100%",fontSize:"2vh",width:"100%"}}>
-                <Navbar.Brand as={Link} style={{fontSize:"5vh",position:"absolute",left:"0",top:"0",lineHeight:".75"}} to="">{"{js}"}</Navbar.Brand>
+                <Navbar variant= "light" style={{fontSize:"3vh",width:"100%",position:"relative"}}>
+                    <Navbar.Brand as={Link} style={{fontSize:"6vh",position:"absolute",fontFamily:"var(--font-family-sans-serif)",fontWeight:"600"}} to="">{"{js}"}</Navbar.Brand>
 
                     <Container fluid style={{alignContent:"center",justifyContent:"center"}}>
-                        <Nav variant="pills" activeKey={this.getActiveKey()} style={{alignContent:"center"}}>
+                        <Nav variant="pills" bg="light" activeKey={this.getActiveKey()} style={{alignContent:"center",fontWeight:"700"}}>
                             <HeaderLink to="posts" name="Posts"/>
                             <HeaderLink to="map" name="Map"/>
                         </Nav>
                     </Container>
                 </Navbar>
+                <hr style={{margin:"0"}}/>
             </div>
         );
     }

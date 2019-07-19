@@ -7,9 +7,9 @@ class MapPage extends React.Component
     render()
     {
         return(
-            <div style={{display:"flex",height:"100vh",overflow:"none",flexFlow:"row wrap"}}>
+            <div style={{height:"100vh",overflow:"none",display: "flex",flexFlow: "column"}}>
                 <Global/>
-                <iframe title="Map" style ={{height:"93vh",width:"100%"}}src="https://go.jack.vg/map"/>
+                <iframe title="Map" style ={{width:"100%",flex:"1"}}src="https://go.jack.vg/map"/>
             </div>
         );
     }

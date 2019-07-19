@@ -35,6 +35,7 @@ module.exports = {
         accessToken: `3vdbeP6c08cgcRxyR7tscyvMm-DnOJ4Wzmz-IYwWMPg`,
       },
     },
+    `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
