@@ -9,17 +9,16 @@ class Preview extends React.Component
     {
         return(
             <Col md="auto" lg={4} style={{marginTop:"2%"}}>
-            <Card fluid bg="dark" text="white" style={{height:"100%"}}>
-                <Card.Img variant="top" src={this.props.data.image.file.url} />
-                <Card.Body>
-                    <Card.Title>{this.props.data.title}</Card.Title>
-                    <Card.Text>
-                        {this.props.data.tagline}
-                    </Card.Text>
-                    
-                </Card.Body>
-                <Card.Footer><Button as={Link} to={this.props.data.fields.slug} variant="secondary">Read more</Button></Card.Footer>
-            </Card>
+                <Card fluid bg="dark" text="white" style={{height:"100%"}}>
+                    <Card.Img variant="top" src={this.props.data.image.file.url} />
+                    <Card.Body>
+                        <Card.Title>{this.props.data.title}</Card.Title>
+                        <Card.Text>
+                            {this.props.data.tagline}
+                        </Card.Text>  
+                    </Card.Body>
+                    <Card.Footer><Button as={Link} to={this.props.data.fields.slug} variant="secondary">Read more</Button></Card.Footer>
+                </Card>
             </Col>);
     }
 }
