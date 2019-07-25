@@ -1,7 +1,8 @@
 import React from'react'
 import Global from '../components/Global.js'
 import verbs from "../files/verbs.json"
-
+import ListGroup from 'react-bootstrap/ListGroup'
+import Container from 'react-bootstrap/Container'
 class Word extends React.Component
 {
     constructor(props)
@@ -15,42 +16,54 @@ class Word extends React.Component
     }
     render()
     {
-        return(<p style={{position:"absolute",transform:"translateY("+this.state.y+"px)"}}className="scroll">{verbs[this.props.index]}</p>);
+        return(<p style={{position:"absolute",transform:"translateY("+this.state.y+"px)"}}className="scroll">{this.props.word}</p>);
     }
 }
 
 class IndexPage extends React.Component
 {
+    radius = 5;
     constructor()
     {
         super();
         this.state={index:0};
     }
+    scrolling;
     componentDidMount()
     {
-        setInterval(this.add,1);
-        //this.add();
+        //setInterval(this.nextWord,1);
+        this.scrolling = document.getElementsByClassName("scroll")[0];
+        this.scrolling.addEventListener("animationiteration",this.handleIteration);
     }
-    words = [];
-    add = ()=>
+    handleIteration= () =>
     {
-        this.setState({index:this.state.index+1});
-        this.words.push(<Word index={this.state.index}/>)
-        setTimeout(this.remove,1000);
+        let index = verbs.slice(this.state.index,this.state.index+this.radius).indexOf("intrudes");
+        if(index)
+        {
+            this.scrolling.style.animationPlayState = "paused";
+            this.setState((state)=>({index:Math.min(verbs.indexOf("intrudes"),verbs.length-this.radius)}));
+        }
+        else this.setState((state)=>({index:Math.min(state.index+this.radius,verbs.length-this.radius)}));
     }
-    remove()
+    nextWord = ()=>
     {
-        this.words.pop();
+        this.setState((state)=>({index:Math.min(state.index+1,verbs.length-this.radius)}));
     }
     render()
     {
         return(
             <div style={{height:"100vh",display:"flex",flexDirection:"column"}}>
                 <Global/>
-                <div style={{flex:"1",flexFlow:"column"}} className="vc hc">{this.words.map((word)=>word)}</div>
+                <div className="vc hc" style={{flex:"1",overflow:"hidden"}}>
+                    <div style={{width:"10%",maxHeight:"20%",overflow:"hidden"}}>
+                <ListGroup className="scroll">
+                        {verbs.slice(this.state.index,this.state.index+this.radius).map((verb)=>(<ListGroup.Item>{verb}</ListGroup.Item>))}
+                </ListGroup>
+                </div>
+                </div>
             </div>
         );
     }
 }
-
+//.slice(this.state.index-(this.radius-1),this.state.index+this.radius)
 export default IndexPage;

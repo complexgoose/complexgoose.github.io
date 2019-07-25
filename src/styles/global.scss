@@ -37,5 +37,11 @@ body
 
 .scroll
 {
-    transition: transform 3s;
+    animation: scroll 1s forwards infinite linear;
+}
+
+@keyframes scroll
+{
+    0%{transform: translateY(0px);}
+    100%{transform: translateY(-25%)}
 }
