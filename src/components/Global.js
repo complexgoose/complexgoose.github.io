@@ -30,6 +30,7 @@ class Global extends React.Component
         if(path.startsWith("post")) return "posts";
         return path;
     }
+
     render()
     {
         return(
@@ -37,7 +38,6 @@ class Global extends React.Component
                 <Head/>
                 <Navbar variant= "light" style={{fontSize:"3vh",width:"100%",position:"relative"}}>
                     <Navbar.Brand as={Link} style={{fontSize:"6vh",position:"absolute",fontFamily:"var(--font-family-sans-serif)",fontWeight:"600"}} to="">{"{js}"}</Navbar.Brand>
-
                     <Container fluid style={{alignContent:"center",justifyContent:"center"}}>
                         <Nav variant="pills" bg="light" activeKey={this.getActiveKey()} style={{alignContent:"center",fontWeight:"700"}}>
                             <HeaderLink to="posts" name="Posts"/>

@@ -37,7 +37,12 @@ body
 
 .scroll
 {
-    animation: scroll 1s forwards infinite linear;
+    animation: scroll .001s forwards infinite linear;
+}
+
+.firstLetter::first-letter
+{
+    color: black;
 }
 
 @keyframes scroll
