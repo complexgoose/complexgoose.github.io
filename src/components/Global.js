@@ -34,14 +34,15 @@ class Global extends React.Component
     render()
     {
         return(
-            <div style={{width:"100%"}}>
+            <div style={{width:"100%",display:"flex"}}>
                 <Head/>
-                <Navbar variant= "light" style={{fontSize:"3vh",width:"100%",position:"relative"}}>
-                    <Navbar.Brand as={Link} style={{fontSize:"6vh",position:"absolute",fontFamily:"var(--font-family-sans-serif)",fontWeight:"600"}} to="">{"{js}"}</Navbar.Brand>
+                <Navbar variant= "dark" bg="dark" style={{fontSize:"2vh",width:"100%",position:"relative",padding:"0vh 1vw 0vh 1vw"}}>
+                    <Navbar.Brand as={Link} style={{fontSize:"3vh",lineHeight:"5vh",fontFamily:"var(--font-family-sans-serif)",fontWeight:"500",width:"0"}} to="" name="">{"{js}"}</Navbar.Brand>
                     <Container fluid style={{alignContent:"center",justifyContent:"center"}}>
                         <Nav variant="pills" bg="light" activeKey={this.getActiveKey()} style={{alignContent:"center",fontWeight:"700"}}>
-                            <HeaderLink to="posts" name="Posts"/>
-                            <HeaderLink to="map" name="Map"/>
+                            <h1 style={{backgroundImage:"linear-gradient(to right, purple,orange)",backgroundClip:"text",color:"transparent"}}>jstro.io</h1>
+                            {/*<HeaderLink to="posts" name="Posts"/>*/}
+                            {/*<HeaderLink to="map" name="Map"/>*/}
                         </Nav>
                     </Container>
                 </Navbar>

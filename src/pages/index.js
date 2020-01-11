@@ -1,48 +1,8 @@
 import React from'react'
 import Global from '../components/Global.js'
-import nouns from "../files/nouns.json"
-import adjectives from "../files/adjectives.json"
+import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import BackgroundImage from 'gatsby-background-image'
-
-/*
-class Word extends React.Component
-{
-    constructor()
-    {
-        super();
-        this.state={index:0,color:"black"};
-    }
-    componentDidMount()
-    {
-        this.nextWord();
-        if(this.props.initColor) this.setState({color:this.props.initColor});
-    }
-    delay = 1;
-    randomIndex = ()=>
-    {
-        return Math.floor(Math.random()*this.props.array.length);
-    }
-    nextWord = ()=>
-    {
-        this.setState({index:this.randomIndex()});
-        if(this.delay<500)
-        {
-            setTimeout(this.nextWord,this.delay);
-            this.delay*=1.3;
-        }
-        else
-        {
-            let color = "red";
-            if(this.props.finishColor) color = this.props.finishColor;
-            this.setState({index:this.props.index,color:color});
-        }
-    }
-    render()
-    {
-        return <p style={{color:this.state.color}}>{this.props.array[this.state.index]}</p>
-    }
-}*/
+import {Link} from 'gatsby'
 
 class IndexPage extends React.Component
 {
@@ -61,14 +21,25 @@ class IndexPage extends React.Component
         return(
             <div style={{height:"100vh",display:"flex",flexDirection:"column"}}>
                 <Global/>
+                <div style={{position:"relative",overflow:"visible",height:"0px",width:"0px"}}>
+                <iframe title="Swirling Colors Animation" src="https://editor.p5js.org/jackstrosahl/embed/rk7YeaDjQ" style={{position:"fixed",width:"100%",height:"100%", zIndex:"-100"}}></iframe></div>
+                <div className="vc hc full">
+                  <Card bg="primary" text="white" className="text-center" style={{width:"30vw"}}>
+                    <Card.Header>Stop Right There!</Card.Header>
+                    <Card.Body>
+                      <Card.Body>
+                        I bet you're itchin' to give me clout.  Well, click that button then!
+                      </Card.Body>
+                      <Button variant="warning" href="https://www.youtube.com/channel/UC_30B5_Jc9i5UIrG596Lqdg?sub_confirmation=1">Boost Ego</Button>
+                    </Card.Body>
+                  </Card>
+                </div>
+                {/*
                 <BackgroundImage fluid={this.data.hanging.childImageSharp.fluid}className="vc hc" style={{flex:"1",overflow:"hidden"}}>
                 <Button variant="danger" style={{display:"flex",fontSize:"3vh",maxHeight:"5vh",lineHeight:"1"}} onClick={()=>(this.forceUpdate())}>
-                        <span style={{color:"black"}}>jack&nbsp;</span>
-                        <span style={{color:"black"}}>.&nbsp;</span>
-                        <span className="firstLetter">{this.randItem(adjectives)}&nbsp;</span>
-                        <span className="firstLetter">{this.randItem(nouns)}</span>
+                        jstro.io
                 </Button>
-                </BackgroundImage>
+                </BackgroundImage>*/}
             </div>
         );
     }
