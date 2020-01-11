@@ -40,7 +40,7 @@ class Global extends React.Component
                     <Navbar.Brand as={Link} style={{fontSize:"3vh",lineHeight:"5vh",fontFamily:"var(--font-family-sans-serif)",fontWeight:"500",width:"0"}} to="" name="">{"{js}"}</Navbar.Brand>
                     <Container fluid style={{alignContent:"center",justifyContent:"center"}}>
                         <Nav variant="pills" bg="light" activeKey={this.getActiveKey()} style={{alignContent:"center",fontWeight:"700"}}>
-                            <h1 style={{backgroundImage:"linear-gradient(to right, purple,orange)",backgroundClip:"text",color:"transparent"}}>jstro.io</h1>
+                            <h1 style={{backgroundImage:"linear-gradient(to right, purple,orange)",backgroundClip:"text",WebkitBackgroundClip:"text",color:"transparent"}}>jstro.io</h1>
                             {/*<HeaderLink to="posts" name="Posts"/>*/}
                             {/*<HeaderLink to="map" name="Map"/>*/}
                         </Nav>

@@ -24,7 +24,7 @@ class IndexPage extends React.Component
                 <div style={{position:"relative",overflow:"visible",height:"0px",width:"0px"}}>
                 <iframe title="Swirling Colors Animation" src="https://editor.p5js.org/jackstrosahl/embed/rk7YeaDjQ" style={{position:"fixed",width:"100%",height:"100%", zIndex:"-100"}}></iframe></div>
                 <div className="vc hc full">
-                  <Card bg="primary" text="white" className="text-center" style={{width:"30vw"}}>
+                  <Card bg="primary" text="white" className="text-center" style={{minHeight:"30vh",maxWidth:"80vw"}}>
                     <Card.Header>Stop Right There!</Card.Header>
                     <Card.Body>
                       <Card.Body>
