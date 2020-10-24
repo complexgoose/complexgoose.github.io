@@ -22,15 +22,16 @@ class IndexPage extends React.Component
             <div style={{height:"100vh",display:"flex",flexDirection:"column"}}>
                 <Global/>
                 <div style={{position:"relative",overflow:"visible",height:"0px",width:"0px"}}>
-                <iframe title="Swirling Colors Animation" src="https://editor.p5js.org/jackstrosahl/embed/rk7YeaDjQ" style={{position:"fixed",width:"100%",height:"100%", zIndex:"-100"}}></iframe></div>
+                    <iframe title="Swirling Colors Animation" src="https://editor.p5js.org/jackstrosahl/embed/G_-1c39p2"
+                        style={{position:"fixed",width:"100%",height:"100%", zIndex:"-100"}}/>
+                </div>
                 <div className="vc hc full">
-                  <Card bg="primary" text="white" className="text-center" style={{minHeight:"30vh",maxWidth:"80vw"}}>
-                    <Card.Header>Stop Right There!</Card.Header>
+                  <Card bg="primary" text="white" className="text-center">
                     <Card.Body>
                       <Card.Body>
-                        I bet you're itchin' to give me clout.  Well, click that button then!
+                        Check me out on YouTube!
                       </Card.Body>
-                      <Button variant="warning" href="https://www.youtube.com/channel/UC_30B5_Jc9i5UIrG596Lqdg?sub_confirmation=1">Boost Ego</Button>
+                      <Button variant="danger" href="https://www.youtube.com/channel/UC_30B5_Jc9i5UIrG596Lqdg?sub_confirmation=1">Subscribe</Button>
                     </Card.Body>
                   </Card>
                 </div>
