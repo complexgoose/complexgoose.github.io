@@ -1,62 +1,33 @@
 {
-  "name": "complexgoose",
+  "name": "jstro.io",
+  "version": "1.0.0",
   "private": true,
-  "description": "Blog, personal site",
-  "version": "0.1.0",
-  "author": "Jack Strosahl <jack@strosahl.org>",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.26",
-    "@fortawesome/free-brands-svg-icons": "^5.12.0",
-    "@fortawesome/free-solid-svg-icons": "^5.12.0",
-    "@fortawesome/react-fontawesome": "^0.1.8",
-    "bootstrap": "^4.4.1",
-    "contentful": "^7.13.0",
-    "gatsby": "^2.18.21",
-    "gatsby-background-image": "^0.8.19",
-    "gatsby-cli": "^2.8.26",
-    "gatsby-image": "^2.2.38",
-    "gatsby-plugin-manifest": "^2.2.37",
-    "gatsby-plugin-offline": "^2.2.10",
-    "gatsby-plugin-react-helmet": "^3.1.21",
-    "gatsby-plugin-sass": "^2.1.27",
-    "gatsby-plugin-sharp": "^2.3.13",
-    "gatsby-source-contentful": "^2.1.76",
-    "gatsby-source-filesystem": "^2.1.46",
-    "gatsby-transformer-sharp": "^2.3.12",
-    "json-loader": "^0.5.7",
-    "node-sass": "^4.13.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.16",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "react-markdown": "^4.3.1",
-    "typeface-encode-sans-condensed": "0.0.72",
-    "typeface-merriweather": "0.0.72"
-  },
-  "devDependencies": {
-    "gh-pages": "^2.2.0",
-    "prettier": "^1.19.1"
-  },
+  "description": "jstro.io",
+  "author": "jackstrosahl",
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
-    "https": "NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop --https",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "clean": "gatsby clean"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.8.4",
+    "gatsby": "^4.16.0",
+    "gatsby-plugin-image": "^2.16.1",
+    "gatsby-plugin-react-helmet": "^5.16.0",
+    "gatsby-plugin-sass": "^5.16.0",
+    "gatsby-plugin-sharp": "^4.16.1",
+    "gatsby-source-filesystem": "^4.16.0",
+    "gatsby-transformer-sharp": "^4.16.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.52.3"
   }
 }
