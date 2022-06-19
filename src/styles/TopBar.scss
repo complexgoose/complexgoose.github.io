@@ -6,3 +6,16 @@
     width: 0;
     color: white;
 }
+
+.BarContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.TextContainer {
+    background-color: white;
+    border-radius: 0.5vmax;
+    padding: 0.3vmax;
+}

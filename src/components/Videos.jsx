@@ -9,9 +9,10 @@ const Videos = () => {
     <Paper
       className="Section"
       style={{ background: theme.palette.secondary.main }}
+      elevation={24}
     >
-      <Typography className="SectionTitle" variant="h4" gutterBottom>
-        My Videos
+      <Typography className="SectionTitle" variant="h2" gutterBottom>
+        Videos
       </Typography>
       <Grid container spacing={5}>
         {ids.map((video) => (

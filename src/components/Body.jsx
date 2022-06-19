@@ -7,7 +7,7 @@ import "../styles/Body.scss"
 
 const Body = () => {
   return (
-    <Stack>
+    <Stack className="Body">
       <Videos />
       <Pieces />
     </Stack>
