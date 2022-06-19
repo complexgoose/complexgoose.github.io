@@ -5,6 +5,7 @@ const PieceEmbed = ({ piece }) => {
   return (
     <Card className="EmbedCard">
       <iframe
+        title="p5.js Sketch"
         className="Embed"
         src={`https://editor.p5js.org/jackstrosahl/full/${piece}`}
       ></iframe>

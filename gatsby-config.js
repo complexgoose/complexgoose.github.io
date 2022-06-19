@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `jstro.io`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://jstro.io`
   },
   plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',

@@ -58,9 +58,12 @@ const ids = [
 const pageSize = 4
 const Pieces = () => {
   const [pieceI, setPieceI] = useState(0)
+  const scrollPieces = () =>
+    document.querySelector("#pieces .SectionTitle").scrollIntoView()
   return (
     <Paper
       className="Section"
+      id="pieces"
       style={{ background: theme.palette.secondary.main }}
       elevation={24}
     >
@@ -79,14 +82,20 @@ const Pieces = () => {
           variant="contained"
           className="Previous"
           disabled={pieceI === 0}
-          onClick={() => setPieceI(pieceI - pageSize)}
+          onClick={() => {
+            setPieceI(pieceI - pageSize)
+            scrollPieces()
+          }}
         >
           Previous
         </Button>
         <Button
           variant="contained"
           disabled={pieceI + pageSize >= ids.length}
-          onClick={() => setPieceI(pieceI + pageSize)}
+          onClick={() => {
+            setPieceI(pieceI + pageSize)
+            scrollPieces()
+          }}
         >
           Next
         </Button>

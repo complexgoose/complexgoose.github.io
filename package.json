@@ -12,7 +12,11 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "https": "NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop --https",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",

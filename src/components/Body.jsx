@@ -8,8 +8,8 @@ import "../styles/Body.scss"
 const Body = () => {
   return (
     <Stack className="Body">
-      <Videos />
       <Pieces />
+      <Videos />
     </Stack>
   )
 }
