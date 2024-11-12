@@ -1,0 +1,23 @@
+.Body {
+    padding: 0 0 3vmax;
+}
+.SectionTitle {
+    font-weight: bold;
+    color: white;
+}
+
+.Section {
+    padding: 1.5vmax;
+    margin: 3vmax 3vmax 0;
+}
+
+.PieceNav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 1vmax;
+
+    .Previous {
+        margin-right: 1vmax;
+    }
+}

@@ -1,0 +1,22 @@
+.EmbedCard {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        display: block;
+        content: "";
+        padding-top: 115%;
+    }
+}
+
+.VideoCard::after {
+    padding-top: 56.5%;
+}
+
+.Embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
