@@ -7,7 +7,7 @@ const PieceEmbed = ({ piece }) => {
   const isVisible = useIsVisible(ref)
   const [isLoaded, setIsLoaded] = useState(false)
   return (
-    <Box className="Piece">
+    <Box className="Piece" id={`piece-${piece}`}>
       <Card className="EmbedCard" ref={ref}>
         {isVisible && (
           <iframe

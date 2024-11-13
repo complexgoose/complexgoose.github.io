@@ -10,10 +10,10 @@ const Pieces = () => {
   const [ids, setIds] = useState([])
   useEffect(async () => {
     const p5Ids = await import("/static/p5ids.json")
-    setIds(Object.values(p5Ids))
+    setIds(Array.from(p5Ids))
   }, [])
-  const scrollPieces = () =>
-    document.querySelector("#pieces .SectionTitle").scrollIntoView()
+  const scrollToPiece = (piece) =>
+    document.querySelector(`piece-${piece}`).scrollIntoView()
   const theme = useTheme()
   return (
     <Paper
