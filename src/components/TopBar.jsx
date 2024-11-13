@@ -1,8 +1,18 @@
-import { AppBar, Link, Toolbar, Typography, useTheme } from "@mui/material"
+import {
+  AppBar,
+  Box,
+  IconButton,
+  Link,
+  Toolbar,
+  Typography,
+  useTheme,
+} from "@mui/material"
+import MenuIcon from "@mui/icons-material/Menu"
 import { Link as GLink } from "gatsby"
 import React from "react"
 
 import "../styles/TopBar.scss"
+import { renderToPipeableStream } from "react-dom/server"
 
 const TopBar = () => {
   const theme = useTheme()
@@ -27,6 +37,9 @@ const TopBar = () => {
             </Typography>
           </div>
         </div>
+        {/* <IconButton className="MenuButton">
+          <MenuIcon />
+        </IconButton> */}
       </Toolbar>
     </AppBar>
   )

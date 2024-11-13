@@ -12,11 +12,9 @@ const Pieces = () => {
     const p5Ids = await import("/static/p5ids.json")
     setIds(Object.values(p5Ids))
   }, [])
-  const [pieceI, setPieceI] = useState(0)
   const scrollPieces = () =>
     document.querySelector("#pieces .SectionTitle").scrollIntoView()
   const theme = useTheme()
-  console.log(theme)
   return (
     <Paper
       className="Pieces"
