@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { theme } from "../constants/theme"
 import PieceEmbed from "./PieceEmbed"
 
+import "../styles/Pieces.scss"
+
 const pageSize = 4;
 const Pieces = () => {
   const [ids, setIds] = useState([]);
@@ -16,44 +18,12 @@ const Pieces = () => {
     document.querySelector("#pieces .SectionTitle").scrollIntoView()
   return (
     <Paper
-      className="Section"
+      className="Pieces"
       id="pieces"
       style={{ background: theme.palette.secondary.main }}
       elevation={24}
     >
-      <Typography className="SectionTitle" variant="h2" gutterBottom>
-        Art
-      </Typography>
-      <Grid container spacing={4}>
-        {ids.slice(pieceI, pieceI + pageSize).map((piece) => (
-          <Grid item xs="12" sm="12" md="6" lg="3">
-            <PieceEmbed piece={piece} />
-          </Grid>
-        ))}
-      </Grid>
-      <div className="PieceNav">
-        <Button
-          variant="contained"
-          className="Previous"
-          disabled={pieceI === 0}
-          onClick={() => {
-            setPieceI(pieceI - pageSize)
-            scrollPieces()
-          }}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="contained"
-          disabled={pieceI + pageSize >= ids.length}
-          onClick={() => {
-            setPieceI(pieceI + pageSize)
-            scrollPieces()
-          }}
-        >
-          Next
-        </Button>
-      </div>
+      <PieceEmbed piece={ids[pieceI]} />
     </Paper>
   )
 }

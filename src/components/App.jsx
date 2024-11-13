@@ -3,9 +3,11 @@ import React from "react"
 import Body from "./Body"
 import TopBar from "./TopBar"
 
+import "../styles/App.scss"
+
 const App = () => {
   return (
-    <Stack>
+    <Stack className="App">
       <TopBar />
       <Body />
     </Stack>

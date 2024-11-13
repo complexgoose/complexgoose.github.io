@@ -1,6 +1,8 @@
 .Body {
-    padding: 0 0 3vmax;
+    min-height: 0;
+        flex: 1;
 }
+
 .SectionTitle {
     font-weight: bold;
     color: white;
