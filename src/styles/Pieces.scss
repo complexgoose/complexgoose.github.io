@@ -1,3 +1,12 @@
 .Pieces {
     height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+}
+
+.Piece {
+    max-height: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
 }

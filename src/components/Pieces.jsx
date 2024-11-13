@@ -23,7 +23,7 @@ const Pieces = () => {
       style={{ background: theme.palette.secondary.main }}
       elevation={24}
     >
-      <PieceEmbed piece={ids[pieceI]} />
+      {ids.map((id) => <PieceEmbed piece={id} />)}
     </Paper>
   )
 }
