@@ -1,62 +1,16 @@
 import { Button, Grid, Paper, Typography } from "@mui/material"
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { theme } from "../constants/theme"
 import PieceEmbed from "./PieceEmbed"
 
-const ids = [
-  "npr4-56ph",
-  "mWTe6i9jM",
-  "lt3RXmZ1N",
-  "edEUDma5e",
-  "IHHUUy6n9",
-  "KZJ3eTF1p",
-  "DFkcf58Cp",
-  "KcPe_1Cyh",
-  "bvracbBi0",
-  "N889jgkUN",
-  "kXvPRsChK",
-  "LfB3Su9uq",
-  "u83DK5QVD",
-  "TPYvCj5hZ",
-  "oeClYM84t",
-  "4kBPBvoRA",
-  "TenSYgiKb",
-  "UF9p18G10",
-  "FQC79BoxH",
-  "LtasWDZSk",
-  "H3yaRH8lu",
-  "ORXKgymgv",
-  "qj9xWKO8L",
-  "Jdha8HTJ_",
-  "atxEwccj1",
-  "PMrJmHEp6",
-  "MntSYgcXB",
-  "-jGIoPbMc",
-  "jWfxjHndp",
-  "00NGjtPaj",
-  "tgqYIcwUG",
-  "whNzm3fVl",
-  "EXr3Es-C2",
-  "9xHmvKe9M",
-  "C3H1CmLPV",
-  "8jHeqtHwr",
-  "1RzYWY9up",
-  "RsOAcghTo",
-  "CckmmGA0B",
-  "QJVG9yGLd",
-  "-E_KFTgjH",
-  "BOMjoE4bj",
-  "5O1vCWkLh",
-  "VJjsp8i1c",
-  "O3pLr6lK9",
-  "c66zivxtK",
-  "nuclGdT3e",
-  "_mDfJZ8JI",
-  "o3DpUr3ZA",
-]
-const pageSize = 4
+const pageSize = 4;
 const Pieces = () => {
+  const [ids, setIds] = useState([]);
+  useEffect(async () =>{
+    const p5Ids = await import("/static/p5ids.json");
+    setIds(Object.values(p5Ids));
+  }, []);
   const [pieceI, setPieceI] = useState(0)
   const scrollPieces = () =>
     document.querySelector("#pieces .SectionTitle").scrollIntoView()

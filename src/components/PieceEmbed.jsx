@@ -7,7 +7,7 @@ const PieceEmbed = ({ piece }) => {
       <iframe
         title="p5.js Sketch"
         className="Embed"
-        src={`https://editor.p5js.org/jackstrosahl/full/${piece}`}
+        src={`https://editor.p5js.org/jstro.io/full/${piece}`}
       ></iframe>
     </Card>
   )
