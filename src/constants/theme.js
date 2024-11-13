@@ -1,17 +1,19 @@
-import { createTheme } from "@mui/material";
+import { experimental_extendTheme as extendTheme } from "@mui/material"
 
-export const theme = createTheme({
-    palette: {
+export const theme = extendTheme({
+  colorSchemes: {
+    light: {
+      palette: {
         primary: {
-            main: "#dd2c00",
+          main: "#dd2c00",
         },
         secondary: {
-            main: "#dd0042",
-        }
+          main: "#dd0042",
+        },
+      },
     },
-    typography: {
-        fontFamily: [
-            'Inter'
-        ]
-    }
-});
+  },
+  typography: {
+    fontFamily: ["Inter"],
+  },
+})

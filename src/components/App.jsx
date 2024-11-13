@@ -8,8 +8,8 @@ import "../styles/App.scss"
 const App = () => {
   return (
     <Stack className="App">
-      <TopBar />
       <Body />
+      <TopBar />
     </Stack>
   )
 }

@@ -2,6 +2,11 @@
     height: 100%;
     scroll-snap-type: y mandatory;
     overflow: auto;
+    scrollbar-width: none;
+}
+
+.Pieces::-webkit-scrollbar {
+    display: none;
 }
 
 .Piece {
