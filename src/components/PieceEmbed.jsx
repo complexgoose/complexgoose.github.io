@@ -5,7 +5,6 @@ import { useIsVisible } from "../hooks/Observer"
 const PieceEmbed = ({ piece }) => {
   const ref = useRef()
   const isVisible = useIsVisible(ref)
-  const [isLoaded, setIsLoaded] = useState(false)
   return (
     <Box className="Piece" id={`piece-${piece}`}>
       <Card className="EmbedCard" ref={ref}>
