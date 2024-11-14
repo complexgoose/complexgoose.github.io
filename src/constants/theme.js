@@ -5,10 +5,16 @@ export const theme = extendTheme({
     light: {
       palette: {
         primary: {
-          main: "#dd2c00",
+          main: "#000000",
         },
         secondary: {
-          main: "#dd0042",
+          main: "#FFFFFF",
+        },
+        info: {
+          main: "#7914B3",
+        },
+        warning: {
+          main: "#FF3700",
         },
       },
     },
@@ -17,3 +23,4 @@ export const theme = extendTheme({
     fontFamily: ["Inter"],
   },
 })
+console.log(theme)

@@ -14,7 +14,7 @@ const IndexPage = () => {
     <StyledEngineProvider injectFirst>
       <CssVarsProvider theme={theme}>
         <Helmet>
-          <title>Jack Strosahl</title>
+          <title>Jules Strosahl</title>
           <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
         </Helmet>
         <App />

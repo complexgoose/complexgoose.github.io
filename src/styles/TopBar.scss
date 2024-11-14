@@ -1,10 +1,17 @@
 .Logo {
+    position: absolute;
+    // left: 0;
+    // width: 0;
     font-size: 200%;
     line-height: 5vh;
     font-family: var(--font-family-sans-serif);
     font-weight: 500;
-    width: 0;
-    color: white;
+    // width: 0;
+    background-image: linear-gradient(to top, var(--mui-palette-warning-main), var(--mui-palette-info-main));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: drop-shadow(1px 1px 0px #fff);
 }
 
 .BarContent {
@@ -14,14 +21,33 @@
     width: 100%;
 }
 
-.TextContainer {
-    background-color: white;
-    border-radius: 0.5vmax;
-    padding: 0.3vmax;
-}
+
 
 .AppBar {
-    box-shadow: 0 -5px 5px var(--mui-palette-primary-main);
+    // box-shadow: 0 -5px 5px var(--mui-palette-primary-main);
+    border-radius: 15px;
+    $bar-margin: 0.5vmax;
+    margin: $bar-margin;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    width: calc(100% - 2 * #{$bar-margin});
+
+    .TextContainer {
+        // background-color: white;
+        border-radius: 1vmax;
+        padding: 0.1vmax 0.6vmax;
+        
+        .Title {
+            line-height:5vh;
+            background-image: linear-gradient(to right, var(--mui-palette-warning-main), var(--mui-palette-info-main));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            filter: drop-shadow(2px 2px 0px #fff);
+        }
+    }
 }
 
 .MenuButton {

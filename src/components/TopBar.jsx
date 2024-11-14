@@ -24,15 +24,7 @@ const TopBar = () => {
         </Link>
         <div className="BarContent">
           <div className="TextContainer">
-            <Typography
-              variant="h4"
-              style={{
-                backgroundImage: `linear-gradient(to right, ${theme.vars.palette.primary.main},${theme.vars.palette.secondary.main})`,
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                color: "transparent",
-              }}
-            >
+            <Typography variant="h4" className="Title">
               jstro.io
             </Typography>
           </div>
