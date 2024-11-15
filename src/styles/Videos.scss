@@ -1,0 +1,20 @@
+.Videos {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  height: 100%;
+  overflow: auto;
+
+  .Section {
+    margin-bottom: 7.5vmax;
+  }
+
+  .VideoGrid {
+    width: fit-content;
+    .VideoGridItem {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

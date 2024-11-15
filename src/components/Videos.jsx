@@ -1,23 +1,27 @@
-import { Grid, Paper, Typography, useTheme } from "@mui/material"
+import { Box, Grid, Paper, Typography, useTheme } from "@mui/material"
 import React from "react"
 import VideoEmbed from "./VideoEmbed"
+
+import "../styles/Videos.scss"
 
 const ids = ["U0YMazTRb_I", "RiJYQp1-wdQ", "jLxmaGGeulg"]
 const Videos = () => {
   const theme = useTheme()
   return (
-    <Paper className="Section" elevation={24}>
-      <Typography className="SectionTitle" variant="h2" gutterBottom>
-        Videos
-      </Typography>
-      <Grid container spacing={5}>
-        {ids.map((video) => (
-          <Grid item xs="12">
-            <VideoEmbed video={video} />
-          </Grid>
-        ))}
-      </Grid>
-    </Paper>
+    <Box className="Videos">
+      <Paper className="Section" elevation={24}>
+        <Typography className="SectionTitle" variant="h2" gutterBottom>
+          Videos
+        </Typography>
+        <Grid container spacing={5} className="VideoGrid">
+          {ids.map((video) => (
+            <Grid className="VideoGridItem" item xs="12">
+              <VideoEmbed video={video} />
+            </Grid>
+          ))}
+        </Grid>
+      </Paper>
+    </Box>
   )
 }
 

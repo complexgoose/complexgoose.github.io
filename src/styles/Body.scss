@@ -3,15 +3,18 @@
         flex: 1;
 }
 
-.SectionTitle {
-    font-weight: bold;
-    color: white;
-}
 
 .Section {
     padding: 1.5vmax;
     margin: 3vmax 3vmax 0;
     background-color: var(--mui-palette-error-main);
+    width: fit-content;
+
+    .SectionTitle {
+        font-weight: bold;
+        color: white;
+        width: fit-content;
+    }
 }
 
 .PieceNav {
