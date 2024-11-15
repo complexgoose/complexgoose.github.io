@@ -12,13 +12,23 @@
     .NavMenu {
         .NavItem {
             justify-content: center;
-        }
-        .NavItemIcon {
-            color: var(--mui-palette-primary-contrastText);
-        }
+            padding-bottom: 0;
 
-        .NavItemText {
-            flex: unset;
+            .NavItemContent {
+                display: flex;
+                align-items: center;
+                .NavItemIcon {
+                    color: var(--mui-palette-primary-contrastText);
+                    min-width: auto;
+                    $margin-right: 0.5vmax;
+                    margin-right: $margin-right;
+                    margin-left: calc(-24px - #{$margin-right});
+                }
+        
+                .NavItemText {
+                    flex: unset;
+                }
+            }
         }
     }
 

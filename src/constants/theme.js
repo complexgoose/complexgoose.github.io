@@ -23,4 +23,3 @@ export const theme = extendTheme({
     fontFamily: ["Inter"],
   },
 })
-console.log(theme)

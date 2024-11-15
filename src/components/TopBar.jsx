@@ -20,17 +20,37 @@ import React, { useEffect, useRef, useState } from "react"
 import "../styles/TopBar.scss"
 import { Photo, YouTube } from "@mui/icons-material"
 
+
+
 const TopBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const NavItem = ({ icon, text, href }) => (
+    <Link component={GLink} to={href} color="secondary">
+      <ListItemButton className="NavItem" onClick={() => setIsMenuOpen(false)}>
+        <Box className="NavItemContent">
+          <ListItemIcon className="NavItemIcon">{icon}</ListItemIcon>
+          <ListItemText
+            className="NavItemText"
+            primary={text}
+            primaryTypographyProps={{ variant: "h6" }}
+          />
+        </Box>
+      </ListItemButton>
+    </Link>
+  )
 
   const menuButtonRef = useRef()
   const onMenuClickAway = (e) => {
-    console.log(e)
     if (menuButtonRef.current.contains(e.target)) return
     setIsMenuOpen(false)
   }
   useEffect(() => {
-    const onWindowBlur = () => setIsMenuOpen(false)
+    const onWindowBlur = (e) => {
+      setTimeout(() => {
+        if (document.activeElement.tagName !== "IFRAME") return
+        setIsMenuOpen(false)
+      })
+    }
     window.addEventListener("blur", onWindowBlur)
     return () => window.removeEventListener("blur", onWindowBlur)
   }, [])
@@ -39,19 +59,9 @@ const TopBar = () => {
     <AppBar position="sticky" className="AppBar">
       <Collapse in={isMenuOpen}>
         <ClickAwayListener onClickAway={onMenuClickAway}>
-          <List className="NavMenu">
-            <ListItemButton className="NavItem">
-              <ListItemIcon className="NavItemIcon">
-                <Photo />
-              </ListItemIcon>
-              <ListItemText className="NavItemText" primary="Gallery" />
-            </ListItemButton>
-            <ListItemButton className="NavItem">
-              <ListItemIcon className="NavItemIcon">
-                <YouTube />
-              </ListItemIcon>
-              <ListItemText className="NavItemText" primary="Videos" />
-            </ListItemButton>
+          <List className="NavMenu" disablePadding>
+            <NavItem icon={<Photo />} text="Gallery" href="" />
+            <NavItem icon={<YouTube />} text="Videos" href="videos" />
           </List>
         </ClickAwayListener>
       </Collapse>
