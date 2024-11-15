@@ -60,8 +60,8 @@ const TopBar = () => {
       <Collapse in={isMenuOpen}>
         <ClickAwayListener onClickAway={onMenuClickAway}>
           <List className="NavMenu" disablePadding>
-            <NavItem icon={<Photo />} text="Gallery" href="" />
-            <NavItem icon={<YouTube />} text="Videos" href="videos" />
+            <NavItem icon={<Photo />} text="Gallery" href="/" />
+            <NavItem icon={<YouTube />} text="Videos" href="/videos" />
           </List>
         </ClickAwayListener>
       </Collapse>

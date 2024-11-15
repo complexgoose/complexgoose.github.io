@@ -2,6 +2,8 @@ import { Box, Card } from "@mui/material"
 import React, { useRef, useState } from "react"
 import { useIsVisible } from "../hooks/Observer"
 
+import "../styles/Embed.scss"
+
 const PieceEmbed = ({ piece }) => {
   const ref = useRef()
   const isVisible = useIsVisible(ref)

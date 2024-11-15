@@ -1,15 +1,19 @@
 import {
-  StyledEngineProvider,
+  Box,
   Experimental_CssVarsProvider as CssVarsProvider,
+  StyledEngineProvider,
 } from "@mui/material"
-import React from "react"
-import { Helmet } from "react-helmet"
-import App from "../components/App"
-import { theme } from "../constants/theme"
 import favicon from "../images/favicon.png"
-import "../styles/index.scss"
+import React from "react"
+import { theme } from "../constants/theme"
+import { Helmet } from "react-helmet"
+import TopBar from "./TopBar"
 
-const IndexPage = () => {
+import "../styles/App.scss"
+import "../styles/index.scss"
+import "../styles/Body.scss"
+
+const PageWrapper = ({ children }) => {
   return (
     <StyledEngineProvider injectFirst>
       <CssVarsProvider theme={theme}>
@@ -17,10 +21,13 @@ const IndexPage = () => {
           <title>Jules Strosahl</title>
           <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
         </Helmet>
-        <App />
+        <Box className="App">
+          {children}
+          <TopBar />
+        </Box>
       </CssVarsProvider>
     </StyledEngineProvider>
   )
 }
 
-export default IndexPage
+export default PageWrapper

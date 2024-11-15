@@ -8,9 +8,12 @@ import "../styles/Pieces.scss"
 const pageSize = 4
 const Pieces = () => {
   const [ids, setIds] = useState([])
-  useEffect(async () => {
-    const p5Ids = await import("/static/p5ids.json")
-    setIds(Array.from(p5Ids))
+  useEffect(() => {
+    const effect = async () => {
+      const p5Ids = await import("/static/p5ids.json")
+      setIds(Array.from(p5Ids))
+    }
+    effect()
   }, [])
   const scrollToPiece = (piece) =>
     document.querySelector(`piece-${piece}`).scrollIntoView()
