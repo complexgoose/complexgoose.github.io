@@ -15,7 +15,7 @@ import {
 } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu"
 import { Link as GLink } from "gatsby"
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 import "../styles/TopBar.scss"
 import { Photo, YouTube } from "@mui/icons-material"
@@ -29,6 +29,12 @@ const TopBar = () => {
     if (menuButtonRef.current.contains(e.target)) return
     setIsMenuOpen(false)
   }
+  useEffect(() => {
+    const onWindowBlur = () => setIsMenuOpen(false)
+    window.addEventListener("blur", onWindowBlur)
+    return () => window.removeEventListener("blur", onWindowBlur)
+  }, [])
+
   return (
     <AppBar position="sticky" className="AppBar">
       <Collapse in={isMenuOpen}>
