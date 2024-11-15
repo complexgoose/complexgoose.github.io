@@ -1,24 +1,55 @@
 import {
   AppBar,
   Box,
+  ClickAwayListener,
+  Collapse,
   IconButton,
   Link,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
   Toolbar,
   Typography,
-  useTheme,
 } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu"
 import { Link as GLink } from "gatsby"
-import React from "react"
+import React, { useRef, useState } from "react"
 
 import "../styles/TopBar.scss"
-import { renderToPipeableStream } from "react-dom/server"
+import { Photo, YouTube } from "@mui/icons-material"
 
 const TopBar = () => {
-  const theme = useTheme()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const menuButtonRef = useRef()
+  const onMenuClickAway = (e) => {
+    console.log(e)
+    if (menuButtonRef.current.contains(e.target)) return
+    setIsMenuOpen(false)
+  }
   return (
     <AppBar position="sticky" className="AppBar">
-      <Toolbar>
+      <Collapse in={isMenuOpen}>
+        <ClickAwayListener onClickAway={onMenuClickAway}>
+          <List className="NavMenu">
+            <ListItemButton className="NavItem">
+              <ListItemIcon className="NavItemIcon">
+                <Photo />
+              </ListItemIcon>
+              <ListItemText className="NavItemText" primary="Gallery" />
+            </ListItemButton>
+            <ListItemButton className="NavItem">
+              <ListItemIcon className="NavItemIcon">
+                <YouTube />
+              </ListItemIcon>
+              <ListItemText className="NavItemText" primary="Videos" />
+            </ListItemButton>
+          </List>
+        </ClickAwayListener>
+      </Collapse>
+      <Toolbar className="Toolbar">
         <Link component={GLink} className="Logo" to="" underline="none">
           {"{js}"}
         </Link>
@@ -29,9 +60,11 @@ const TopBar = () => {
             </Typography>
           </div>
         </div>
-        {/* <IconButton className="MenuButton">
-          <MenuIcon />
-        </IconButton> */}
+        <Box className="MenuButton" ref={menuButtonRef}>
+          <IconButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <MenuIcon />
+          </IconButton>
+        </Box>
       </Toolbar>
     </AppBar>
   )
