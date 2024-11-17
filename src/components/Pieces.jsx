@@ -1,5 +1,5 @@
 import { Paper, useTheme } from "@mui/material"
-import React, { createRef, useCallback } from "react"
+import React, { createRef } from "react"
 import { useState, useEffect } from "react"
 import PieceEmbed from "./PieceEmbed"
 
@@ -45,7 +45,7 @@ const Pieces = () => {
       if (!visibleId) return
       window.location.hash = `#${visibleId}`
     })
-  }, [visibleId])
+  }, [visibleId]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const scrollToPiece = (piece) =>
     document.querySelector(`#piece-${piece}`)?.scrollIntoView()
@@ -55,11 +55,11 @@ const Pieces = () => {
     urlPieceDelayCancel(() => {
       if (urlPiece && urlPiece !== visibleId) scrollToPiece(urlPiece)
     })
-  }, [urlPiece, visibleId])
+  }, [urlPiece, visibleId]) // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (urlPiece) scrollToPiece(urlPiece)
     else observe()
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const theme = useTheme()
   return (
