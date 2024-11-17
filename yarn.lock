@@ -71,7 +71,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.14.0, @babel/core@npm:^7.20.12":
+"@babel/core@npm:^7.14.0, @babel/core@npm:^7.20.12, @babel/core@npm:^7.26.0":
   version: 7.26.0
   resolution: "@babel/core@npm:7.26.0"
   dependencies:
@@ -9414,6 +9414,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jstro.io@workspace:."
   dependencies:
+    "@babel/core": "npm:^7.26.0"
     "@emotion/react": "npm:^11.9.3"
     "@emotion/styled": "npm:^11.9.3"
     "@mui/icons-material": "npm:^6.1.7"
