@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography, useTheme } from "@mui/material"
+import { Box, Grid, Paper, Typography } from "@mui/material"
 import React from "react"
 import VideoEmbed from "./VideoEmbed"
 
@@ -6,7 +6,6 @@ import "../styles/Videos.scss"
 
 const ids = ["U0YMazTRb_I", "RiJYQp1-wdQ", "jLxmaGGeulg"]
 const Videos = () => {
-  const theme = useTheme()
   return (
     <Box className="Videos">
       <Paper className="Section" elevation={24}>

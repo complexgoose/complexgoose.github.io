@@ -1,15 +1,14 @@
 import { Box, Card } from "@mui/material"
-import React, { useRef, useState } from "react"
+import React, { forwardRef } from "react"
 import { useIsVisible } from "../hooks/Observer"
 
 import "../styles/Embed.scss"
 
-const PieceEmbed = ({ piece }) => {
-  const ref = useRef()
+const PieceEmbed = forwardRef(({ piece }, ref) => {
   const isVisible = useIsVisible(ref)
   return (
-    <Box className="Piece" id={`piece-${piece}`}>
-      <Card className="EmbedCard" ref={ref}>
+    <Box className="Piece">
+      <Card className="EmbedCard" ref={ref} id={`piece-${piece}`}>
         {isVisible && (
           <iframe
             title="p5.js Sketch"
@@ -20,6 +19,6 @@ const PieceEmbed = ({ piece }) => {
       </Card>
     </Box>
   )
-}
+})
 
 export default PieceEmbed
