@@ -35,24 +35,30 @@ const Pieces = ({ location }) => {
       observer.observe(ref.current)
     })
   }
-  const scrollDelayCancel = useDelayCancel(50)
+  const scrollDelayCancel = useDelayCancel(10)
   const onScroll = () => {
     scrollDelayCancel(() => observe())
   }
   const hashDelayCancel = useDelayCancel(100)
+
+  // Track URL hash and what we have set it to programtically
+  const urlPiece = location.hash.substring(1)
+  const [targetUrlPiece, setTargetUrlPiece] = useState(null)
   useEffect(() => {
     hashDelayCancel(() => {
       if (!visibleId) return
       window.location.hash = `#${visibleId}`
+      setTargetUrlPiece(visibleId)
     })
   }, [visibleId]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const scrollToPiece = (piece) =>
     document.querySelector(`#piece-${piece}`)?.scrollIntoView()
-  const urlPiece = location.hash.substring(1)
+
   const urlPieceDelayCancel = useDelayCancel(200)
   useEffect(() => {
     urlPieceDelayCancel(() => {
+      if (urlPiece === targetUrlPiece) return
       if (!urlPiece) scrollToPiece(ids[0])
       if (urlPiece && urlPiece !== visibleId) scrollToPiece(urlPiece)
     })
@@ -60,7 +66,7 @@ const Pieces = ({ location }) => {
   useEffect(() => {
     if (urlPiece) scrollToPiece(urlPiece)
     else observe()
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [refs]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const theme = useTheme()
   return (
