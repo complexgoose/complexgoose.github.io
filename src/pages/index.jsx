@@ -4,10 +4,10 @@ import Pieces from "../components/Pieces"
 
 import "../styles/index.scss"
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   return (
     <PageWrapper>
-      <Pieces />
+      <Pieces location={location} />
     </PageWrapper>
   )
 }

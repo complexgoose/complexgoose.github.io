@@ -6,7 +6,7 @@ import PieceEmbed from "./PieceEmbed"
 import "../styles/Pieces.scss"
 import { useDelayCancel } from "../hooks/useDelayCancel"
 
-const Pieces = () => {
+const Pieces = ({ location }) => {
   const [ids, setIds] = useState([])
   const [refs, setRefs] = useState([])
   useEffect(() => {
@@ -19,17 +19,17 @@ const Pieces = () => {
   }, [])
 
   const [visibleId, setVisibleId] = useState(null)
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const entry = entries.find((entry) => entry.isIntersecting)
-      if (!entry) return
-      setVisibleId(entry.target.id.substring("piece-".length))
-    },
-    {
-      rootMargin: "-1px",
-    }
-  )
   const observe = () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries.find((entry) => entry.isIntersecting)
+        if (!entry) return
+        setVisibleId(entry.target.id.substring("piece-".length))
+      },
+      {
+        rootMargin: "-1px",
+      }
+    )
     refs.forEach((ref) => {
       if (!ref.current) return
       observer.observe(ref.current)
@@ -49,7 +49,7 @@ const Pieces = () => {
 
   const scrollToPiece = (piece) =>
     document.querySelector(`#piece-${piece}`)?.scrollIntoView()
-  const urlPiece = window.location.hash.substring(1)
+  const urlPiece = location.hash.substring(1)
   const urlPieceDelayCancel = useDelayCancel(400)
   useEffect(() => {
     urlPieceDelayCancel(() => {
