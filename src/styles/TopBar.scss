@@ -6,8 +6,10 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    pointer-events: none;
 
     .AppBar {
+        pointer-events: initial;
         // box-shadow: 0 -5px 5px var(--mui-palette-primary-main);
         border-radius: 15px;
         $bar-margin: 0.5vmax;
@@ -54,6 +56,7 @@
                 -webkit-background-clip: text;
                 color: transparent;
                 filter: drop-shadow(1px 1px 0px #fff);
+                // color: white;
             }
 
             .BarContent {
@@ -64,6 +67,7 @@
                 position: absolute;
                 left: 0;
                 right: 0;
+                pointer-events: none;
 
                 .TextContainer {
                     // background-color: white;

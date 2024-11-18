@@ -53,6 +53,7 @@ const Pieces = ({ location }) => {
   const urlPieceDelayCancel = useDelayCancel(200)
   useEffect(() => {
     urlPieceDelayCancel(() => {
+      if (!urlPiece) scrollToPiece(ids[0])
       if (urlPiece && urlPiece !== visibleId) scrollToPiece(urlPiece)
     })
   }, [urlPiece, visibleId]) // eslint-disable-line react-hooks/exhaustive-deps

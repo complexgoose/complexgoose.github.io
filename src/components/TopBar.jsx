@@ -66,7 +66,7 @@ const TopBar = () => {
           </ClickAwayListener>
         </Collapse>
         <Toolbar className="Toolbar">
-          <Link component={GLink} className="Logo" to="" underline="none">
+          <Link component={GLink} className="Logo" to="/" underline="none">
             {"{js}"}
           </Link>
           <div className="BarContent">

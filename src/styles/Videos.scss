@@ -8,6 +8,10 @@
 
   .Section {
     margin-bottom: 7.5vmax;
+
+    .SectionTitle {
+      margin-bottom: 0;
+    }
   }
 
   .VideoGrid {
@@ -15,6 +19,7 @@
     .VideoGridItem {
       display: flex;
       justify-content: center;
+      padding: 2vmax 1vmax 0 1vmax;
     }
   }
 }
