@@ -1,87 +1,92 @@
-.AppBar {
-    // box-shadow: 0 -5px 5px var(--mui-palette-primary-main);
-    border-radius: 15px;
-    $bar-margin: 0.5vmax;
-    margin: $bar-margin;
+.BarContainer {
     position: absolute;
     bottom: 0;
     top: auto;
     left: 0;
-    width: calc(100% - 2 * #{$bar-margin});
+    display: flex;
+    justify-content: center;
+    width: 100%;
 
-    .NavMenu {
-        .NavItem {
-            justify-content: center;
-            padding-bottom: 0;
+    .AppBar {
+        // box-shadow: 0 -5px 5px var(--mui-palette-primary-main);
+        border-radius: 15px;
+        $bar-margin: 0.5vmax;
+        margin: $bar-margin;
+        
+        width: calc(100% - 2 * #{$bar-margin});
+        max-width: 50vmax;
 
-            .NavItemContent {
+        .NavMenu {
+            .NavItem {
+                justify-content: center;
+                padding-bottom: 0;
+
+                .NavItemContent {
+                    display: flex;
+                    align-items: center;
+                    .NavItemIcon {
+                        color: var(--mui-palette-primary-contrastText);
+                        min-width: auto;
+                        $margin-right: 0.5vmax;
+                        margin-right: $margin-right;
+                        margin-left: calc(-24px - #{$margin-right});
+                    }
+            
+                    .NavItemText {
+                        flex: unset;
+                    }
+                }
+            }
+        }
+
+        .Toolbar {
+            display: flex;
+            justify-content: space-between;
+            
+            .Logo {
+                font-size: 200%;
+                line-height: 5vh;
+                font-family: var(--font-family-sans-serif);
+                font-weight: 500;
+                // width: 0;
+                background-image: linear-gradient(to top, var(--mui-palette-warning-main), var(--mui-palette-info-main));
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                filter: drop-shadow(1px 1px 0px #fff);
+            }
+
+            .BarContent {
                 display: flex;
                 align-items: center;
-                .NavItemIcon {
+                justify-content: center;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                right: 0;
+
+                .TextContainer {
+                    // background-color: white;
+                    border-radius: 1vmax;
+                    padding: 0.1vmax 0.6vmax;
+                    
+                    .Title {
+                        line-height:5vh;
+                        background-image: linear-gradient(to right, var(--mui-palette-warning-main), var(--mui-palette-info-main));
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: transparent;
+                        filter: drop-shadow(2px 2px 0px #fff);
+                    }
+                }
+            }
+            
+
+            .MenuButton {
+                button {
                     color: var(--mui-palette-primary-contrastText);
-                    min-width: auto;
-                    $margin-right: 0.5vmax;
-                    margin-right: $margin-right;
-                    margin-left: calc(-24px - #{$margin-right});
-                }
-        
-                .NavItemText {
-                    flex: unset;
                 }
             }
-        }
+        }    
     }
-
-    .Toolbar {
-        display: flex;
-        justify-content: space-between;
-        
-        .Logo {
-            font-size: 200%;
-            line-height: 5vh;
-            font-family: var(--font-family-sans-serif);
-            font-weight: 500;
-            // width: 0;
-            background-image: linear-gradient(to top, var(--mui-palette-warning-main), var(--mui-palette-info-main));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            filter: drop-shadow(1px 1px 0px #fff);
-        }
-
-        .BarContent {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            right: 0;
-
-            .TextContainer {
-                // background-color: white;
-                border-radius: 1vmax;
-                padding: 0.1vmax 0.6vmax;
-                
-                .Title {
-                    line-height:5vh;
-                    background-image: linear-gradient(to right, var(--mui-palette-warning-main), var(--mui-palette-info-main));
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    color: transparent;
-                    filter: drop-shadow(2px 2px 0px #fff);
-                }
-            }
-        }
-        
-
-        .MenuButton {
-            button {
-                color: var(--mui-palette-primary-contrastText);
-            }
-        }
-    }    
 }
-
-
-

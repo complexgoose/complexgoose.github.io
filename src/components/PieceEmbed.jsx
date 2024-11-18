@@ -1,5 +1,5 @@
 import { Box, Card } from "@mui/material"
-import React, { forwardRef, useEffect } from "react"
+import React, { forwardRef } from "react"
 import { useIsVisible } from "../hooks/Observer"
 
 import "../styles/Embed.scss"

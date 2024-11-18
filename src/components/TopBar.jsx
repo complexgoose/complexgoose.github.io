@@ -55,33 +55,35 @@ const TopBar = () => {
   }, [])
 
   return (
-    <AppBar position="sticky" className="AppBar">
-      <Collapse in={isMenuOpen}>
-        <ClickAwayListener onClickAway={onMenuClickAway}>
-          <List className="NavMenu" disablePadding>
-            <NavItem icon={<Photo />} text="Gallery" href="/" />
-            <NavItem icon={<YouTube />} text="Videos" href="/videos" />
-          </List>
-        </ClickAwayListener>
-      </Collapse>
-      <Toolbar className="Toolbar">
-        <Link component={GLink} className="Logo" to="" underline="none">
-          {"{js}"}
-        </Link>
-        <div className="BarContent">
-          <div className="TextContainer">
-            <Typography variant="h4" className="Title">
-              jstro.io
-            </Typography>
+    <Box className="BarContainer">
+      <AppBar position="sticky" className="AppBar">
+        <Collapse in={isMenuOpen}>
+          <ClickAwayListener onClickAway={onMenuClickAway}>
+            <List className="NavMenu" disablePadding>
+              <NavItem icon={<Photo />} text="Gallery" href="/" />
+              <NavItem icon={<YouTube />} text="Videos" href="/videos" />
+            </List>
+          </ClickAwayListener>
+        </Collapse>
+        <Toolbar className="Toolbar">
+          <Link component={GLink} className="Logo" to="" underline="none">
+            {"{js}"}
+          </Link>
+          <div className="BarContent">
+            <div className="TextContainer">
+              <Typography variant="h4" className="Title">
+                jstro.io
+              </Typography>
+            </div>
           </div>
-        </div>
-        <Box className="MenuButton" ref={menuButtonRef}>
-          <IconButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <MenuIcon />
-          </IconButton>
-        </Box>
-      </Toolbar>
-    </AppBar>
+          <Box className="MenuButton" ref={menuButtonRef}>
+            <IconButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <MenuIcon />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   )
 }
 
