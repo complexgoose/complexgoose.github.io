@@ -35,11 +35,11 @@ const Pieces = () => {
       observer.observe(ref.current)
     })
   }
-  const scrollDelayCancel = useDelayCancel(50)
+  const scrollDelayCancel = useDelayCancel(100)
   const onScroll = () => {
     scrollDelayCancel(() => observe())
   }
-  const hashDelayCancel = useDelayCancel(100)
+  const hashDelayCancel = useDelayCancel(200)
   useEffect(() => {
     hashDelayCancel(() => {
       if (!visibleId) return
@@ -50,7 +50,7 @@ const Pieces = () => {
   const scrollToPiece = (piece) =>
     document.querySelector(`#piece-${piece}`)?.scrollIntoView()
   const urlPiece = window.location.hash.substring(1)
-  const urlPieceDelayCancel = useDelayCancel(200)
+  const urlPieceDelayCancel = useDelayCancel(400)
   useEffect(() => {
     urlPieceDelayCancel(() => {
       if (urlPiece && urlPiece !== visibleId) scrollToPiece(urlPiece)
