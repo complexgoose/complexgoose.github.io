@@ -6,15 +6,16 @@ import requests
 with open("../static/p5ids.json") as f:
     p5Ids = load(f)
 
+downloaded = []
 for p5Id in p5Ids:
-    if isdir(f"../static/sketches/{p5Id}"):
+    sketch_dir = f"../static/sketches/{p5Id}"
+    if isdir(sketch_dir):
         continue
     r = requests.get(
         f"https://editor.p5js.org/editor/jstro.io/projects/{p5Id}")
 
     data = r.json()
 
-    sketch_dir = f"../static/sketches/{p5Id}"
     makedirs(sketch_dir, exist_ok=True)
 
     for file in data["files"]:
@@ -29,3 +30,10 @@ for p5Id in p5Ids:
         else:
             with open(f"../static/sketches/{p5Id}/{file['name']}", "w") as f:
                 f.write(file["content"])
+
+    downloaded.append(p5Id)
+
+if len(downloaded) > 0:
+    print(f"Successfully downloaded {','.join(downloaded)}")
+else:
+    print("Up to date")
