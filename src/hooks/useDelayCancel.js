@@ -1,7 +1,11 @@
 import { useState } from "react"
 
 export const useDelayCancel = (delay = 100) => {
-  const [timer, setTimer] = useState(null)
+  let [timer, setTimerState] = useState(null)
+  const setTimer = (val) => {
+    timer = val;
+    setTimerState(timer)
+  }
   const delayCancel = (callback) => {
     if (timer) clearTimeout(timer)
     setTimer(

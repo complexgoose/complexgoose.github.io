@@ -27,13 +27,14 @@ const Pieces = ({ location }) => {
         setVisibleId(entry.target.id.substring("piece-".length))
       },
       {
-        rootMargin: "-1px",
+        rootMargin: "-10px",
       }
     )
-    refs.forEach((ref) => {
-      if (!ref.current) return
-      observer.observe(ref.current)
-    })
+    refs
+      .filter((ref) => ref.current)
+      .forEach((ref) => {
+        observer.observe(ref.current)
+      })
   }
   const scrollDelayCancel = useDelayCancel(10)
   const onScroll = () => {
@@ -47,7 +48,9 @@ const Pieces = ({ location }) => {
   useEffect(() => {
     hashDelayCancel(() => {
       if (!visibleId) return
-      window.location.hash = `#${visibleId}`
+      const url = new URL(location.href)
+      url.hash = `#${visibleId}`
+      window.location.replace(url)
       setTargetUrlPiece(visibleId)
     })
   }, [visibleId]) // eslint-disable-line react-hooks/exhaustive-deps

@@ -39,7 +39,7 @@
     "sass": "^1.52.3"
   },
   "devDependencies": {
-    "gh-pages": "^6.2.0"
+    "gh-pages": "^6.3.0"
   },
   "packageManager": "yarn@4.5.1"
 }
