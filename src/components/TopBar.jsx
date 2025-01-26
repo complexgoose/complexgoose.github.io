@@ -17,9 +17,7 @@ import { Link as GLink } from "gatsby"
 import React, { useEffect, useRef, useState } from "react"
 
 import "../styles/TopBar.scss"
-import { Photo, YouTube } from "@mui/icons-material"
-
-
+import { Photo, YouTube, Work } from "@mui/icons-material"
 
 const TopBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -62,6 +60,11 @@ const TopBar = () => {
             <List className="NavMenu" disablePadding>
               <NavItem icon={<Photo />} text="Gallery" href="/" />
               <NavItem icon={<YouTube />} text="Videos" href="/videos" />
+              <NavItem
+                icon={<Work />}
+                text="Résumé"
+                href="https://jules.strosahl.org"
+              />
             </List>
           </ClickAwayListener>
         </Collapse>
